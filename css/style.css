@@ -1,0 +1,549 @@
+@import url("https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Goldman", sans-serif;
+  background-color: aliceblue;
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2rem;
+  animation: slideInFromTop 0.5s ease-out;
+}
+
+.f1Logo {
+  height: 100px;
+  width: 100px;
+  transform: translateX(50px);
+  animation: logoPop 0.8s ease-out;
+}
+
+.navRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navRight div {
+  color: #ff0000;
+  border: 2px solid #ff0000;
+  padding: 0.2rem 1rem;
+  border-radius: 2px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.navRight div:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: #f0f0f0;
+}
+
+.mainNav {
+  background-color: white;
+  box-shadow: 2px 2px 12px #00000033;
+  padding: 1rem;
+  border-radius: 12px;
+  list-style-type: none;
+  margin-top: 1rem;
+  position: absolute;
+  display: none;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.open {
+  animation: fadeIn 0.5s ease-out;
+  display: block;
+}
+
+.navLink a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.navLink a:hover {
+  color: #ff0000;
+}
+
+/** main section's goes from here */
+section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.centerImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70svh;
+  animation: slideUp 0.8s ease-out;
+}
+
+.HeroHead {
+  z-index: 999;
+  font-size: 4rem;
+  text-transform: capitalize;
+  animation: fadeInUp 1s ease-out;
+}
+
+.secSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.extras {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  transform: translateY(-50%);
+}
+
+.extras > * {
+  animation: slideInFromSide 0.8s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.extras > *:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.extras > *:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.extras > *:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+#ext {
+  height: 100%;
+  max-height: 200px;
+  transition: transform 0.3s ease;
+}
+
+#ext:hover {
+  transform: scale(1.05);
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 1rem;
+  position: absolute;
+  left: 0;
+  top: 40%;
+  font-size: 21px;
+  margin: 1rem;
+}
+
+.icons {
+  color: #fff;
+  background-color: #ff0000;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  animation: bounceIn 0.6s ease-out;
+  transition: transform 0.3s ease;
+}
+
+.icons:hover {
+  transform: rotate(360deg);
+}
+
+/* Animation Keyframes */
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes logoPop {
+  0% {
+    transform: translateX(50px) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(50px) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromSide {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Media Queries (Unchanged from Original) */
+/* Extra Small Devices (Phones, <576px) */
+@media (max-width: 575.98px) {
+  .navRight {
+    display: none;
+  }
+  .f1Logo {
+    height: 60px;
+    width: 60px;
+    transform: translateX(0);
+  }
+
+  .navRight {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  .navRight div {
+    padding: 0.1rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .mainNav {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .HeroHead {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .centerImg {
+    height: 50svh;
+  }
+
+  .extras {
+    flex-direction: column;
+    transform: translateY(-40%);
+    gap: 1rem;
+  }
+
+  #ext {
+    max-height: 120px;
+  }
+
+  .socialIcons {
+    font-size: 16px;
+    top: 30%;
+    margin: 0.5rem;
+  }
+
+  .icons {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+/* Small Devices (Phones, 576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  nav {
+    margin: 0 1.5rem;
+  }
+
+  .f1Logo {
+    height: 80px;
+    width: 80px;
+    transform: translateX(20px);
+  }
+
+  .navRight {
+    gap: 1.5rem;
+  }
+
+  .navRight div {
+    padding: 0.2rem 0.8rem;
+    font-size: 1rem;
+  }
+
+  .mainNav {
+    padding: 0.8rem;
+    margin-top: 0.8rem;
+  }
+
+  .HeroHead {
+    font-size: 2.5rem;
+  }
+
+  .centerImg {
+    height: 60svh;
+  }
+
+  .extras {
+    transform: translateY(-100%);
+    gap: 1.5rem;
+  }
+
+  #ext {
+    max-height: 150px;
+  }
+
+  .socialIcons {
+    font-size: 18px;
+    top: 35%;
+  }
+
+  .icons {
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+}
+
+/* Medium Devices (Tablets, 768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  nav {
+    margin: 0 2rem;
+  }
+
+  .f1Logo {
+    height: 90px;
+    width: 90px;
+    transform: translateX(30px);
+  }
+
+  .navRight {
+    gap: 1.8rem;
+  }
+
+  .navRight div {
+    padding: 0.3rem 1rem;
+  }
+
+  .mainNav {
+    padding: 1rem;
+  }
+
+  .HeroHead {
+    font-size: 3rem;
+  }
+
+  .centerImg {
+    height: 65svh;
+  }
+
+  .extras {
+    transform: translateY(-55%);
+  }
+
+  #ext {
+    max-height: 180px;
+  }
+
+  .socialIcons {
+    font-size: 20px;
+    top: 38%;
+  }
+
+  .icons {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+/* Large Devices (Laptops, 992px - 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .f1Logo {
+    height: 95px;
+    width: 95px;
+    transform: translateX(40px);
+  }
+
+  .navRight {
+    gap: 2rem;
+  }
+
+  .HeroHead {
+    font-size: 3.5rem;
+  }
+
+  .centerImg {
+    height: 68svh;
+  }
+
+  .extras {
+    transform: translateY(-60%);
+  }
+
+  #ext {
+    max-height: 190px;
+  }
+}
+
+/* Extra Large Devices (Desktops, ≥1200px) */
+@media (min-width: 1200px) {
+  /* Default styles are sufficient */
+}
+/* responsive code from here */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  /* Your CSS here */
+  #ext {
+    display: none;
+  }
+
+  .centerImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60svh;
+  }
+  .centerImg img {
+    width: 462px;
+  }
+
+  .HeroHead {
+    font-size: 2rem;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Your CSS here */
+  .centerImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60svh;
+  }
+  .centerImg img {
+    width: 462px;
+  }
+
+  .HeroHead {
+    font-size: 2rem;
+  }
+  #ext {
+    display: none;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Your CSS here */
+
+  .HeroHead {
+    font-size: 3rem;
+  }
+  #ext {
+    display: none;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Your CSS here */
+  .HeroHead {
+    font-size: 3.1rem;
+  }
+
+  #ext {
+    height: 100px;
+  }
+
+  .extras {
+    transform: translateY(-30px);
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  /* Your CSS here */
+  .HeroHead {
+    font-size: 3.3rem;
+  }
+
+  #ext {
+    height: 100px;
+  }
+
+  .extras {
+    transform: translateY(-40px);
+  }
+}
+
+/* Extra extra large devices (very wide screens, 1400px and up) */
+@media (min-width: 1400px) {
+  /* Your CSS here */
+  .HeroHead {
+    font-size: 3rem;
+  }
+}

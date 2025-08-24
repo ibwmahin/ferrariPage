@@ -1,0 +1,258 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e6f0fa;
+  margin: 0;
+  overflow-x: hidden;
+  animation: fadeIn 1s ease-out;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.logo {
+  width: 5rem;
+}
+.sidebar {
+  width: 250px;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideInFromLeft 0.8s ease-out;
+}
+
+.f1Logo {
+  font-size: 2.5rem;
+  color: #ff0000;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 1.5rem 0;
+}
+
+.sidebar nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+  color: #ff0000;
+}
+
+.main-content {
+  margin-left: 250px;
+  flex-grow: 1;
+  padding: 40px;
+  background: url("https://via.placeholder.com/1500x800?text=F1+Track")
+    no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-toggle {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.toggle-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-btn.active,
+.toggle-btn:hover {
+  background-color: #ff0000;
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  animation: popIn 0.6s ease-out;
+}
+
+.form {
+  display: none;
+}
+
+.form.active {
+  display: block;
+}
+
+.form h2 {
+  text-align: center;
+  color: #ff0000;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #000;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #ff0000;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  background-color: #cc0000;
+}
+
+.forgot-password {
+  text-align: center;
+  color: #000;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #ff0000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+  .main-content {
+    margin-left: 200px;
+    padding: 20px;
+  }
+  .form-container {
+    max-width: 300px;
+  }
+  .toggle-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 10px;
+  }
+  .f1Logo {
+    font-size: 2rem;
+  }
+  .sidebar nav ul li {
+    margin: 1rem 0;
+  }
+  .sidebar nav ul li a {
+    font-size: 1rem;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+  .form-container {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  .form h2 {
+    font-size: 1.5rem;
+  }
+  .form-group input {
+    font-size: 0.9rem;
+  }
+  .submit-btn {
+    font-size: 1rem;
+  }
+}
